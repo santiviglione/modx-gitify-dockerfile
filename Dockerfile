@@ -6,7 +6,7 @@ RUN apt-get update && \
 	apt-get install -qy git mysql-client && \
 	rm -rf /var/lib/apt/lists/* && \
 	php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
-	php -r "if (hash_file('SHA384', 'composer-setup.php') === 'e115a8dc7871f15d853148a7fbac7da27d6c0030b848d9b3dc09e2a0388afed865e6a3d6b3c0fad45c48e2b5fc1196ae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;" && \
+	php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;" && \
 	php composer-setup.php && \
 	php -r "unlink('composer-setup.php');" && \
 	chmod +x composer.phar && \
